@@ -1,13 +1,18 @@
 // https://day.js.org/docs/en/display/format
 
-const timeDisplay = function () {
-    var todaysDate = moment()._d;
-    var showTime = document.querySelector("#currentDay");
+// const timeDisplay = function () {
+//     var todaysDate = dayjs();
+//     var showTime = document.getElementById("currentDay");
 
-    showTime.textContent = todaysDate;
-    console.log(moment())
-    console.log(todaysDate)
+//     showTime.textContent = todaysDate;
+//     console.log(moment())
+//     console.log(todaysDate)
 
-    bleep
+    
 
-};
+// };
+
+// timeDisplay()
+
+const dayJsObject = dayjs();
+console.log(dayJsObject.format)
