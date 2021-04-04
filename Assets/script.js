@@ -25,9 +25,13 @@ const displayTimeBlocks = function() {
         console.log(hourstring)
 
         const hour = parseInt(hourstring)
-        
+
+        var textBox = document.getElementsByClassName("textarea");
+        textBox.innerText = "";
+
         if (hour > currentTimeHour) {
             console.log(hour + " is after current time.");
+            document.getElementsByClassName("textarea").classList.add("present")
         } else if (hour < currentTimeHour) {
             const el = document.getElementById("textarea-" + hour);
             console.log(hour + " is before the current time.");
