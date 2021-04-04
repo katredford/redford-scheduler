@@ -37,7 +37,7 @@ const displayTimeBlocks = function() {
             const el = document.getElementById("textarea-" + hour);
             console.log(hour + " is before the current time.");
             console.log("mark")
-            textBox.classList("past");
+            textBox.classList.add("past");
         } else {
             console.log(hour + " is the current hour.")
             // textBox.classList.add("past")
