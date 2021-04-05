@@ -70,7 +70,7 @@ for (let i = 0; i < textAreas.length; i++) {
     const hourEl = textAreas[i];
     var hourString = hourEl.getAttribute("data-time");
 
-
+// getting this to work
  if(textBox[i]) {
      localStorage.setItem('hourString', JSON.stringify(textBox[i]));
      console.log(textBox.innerText)
