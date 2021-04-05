@@ -17,17 +17,17 @@ const displayTimeBlocks = function() {
     console.log(moment(currentTime).hour())//grabs current time hour
    
     const textAreas = document.querySelectorAll(".hour"); 
-    console.log(textAreas[0]);
+    // console.log(textAreas[0]);
     
     const textAreahour = textAreas[0]
     const currentTimeHour = moment(currentTime).hour();
 
     for (let i = 0; i < textAreas.length; i++) {
         const hourEl = textAreas[i];
-        var hourstring = hourEl.getAttribute("data-time");
-        console.log(hourstring)
+        var hourString = hourEl.getAttribute("data-time");
+        // console.log(hourString)
        
-        const hour = parseInt(hourstring);
+        const hour = parseInt(hourString);
 
         // let textBox = document.getElementsByClassName("textarea");
         
@@ -60,16 +60,24 @@ saveTasks.forEach(btn => {
 
 function saveToStorage(event) {
  console.log("we got clicked", event)
+ 
+ const textAreas = document.querySelectorAll(".hour"); 
+ const textAreahour = textAreas[0]
+var textBox = document.getElementsByClassName("textarea", "data-time");
+// const el = document.getElementById("textarea-" + hour);
 
-var textBox = document.getElementsByClassName("textarea");
+for (let i = 0; i < textAreas.length; i++) {
+    const hourEl = textAreas[i];
+    var hourString = hourEl.getAttribute("data-time");
 
- if(textBox) {
-     localStorage.setItem('textBox', JSON.stringify(textBox));
-     console.log(textbox)
+
+ if(textBox[i]) {
+     localStorage.setItem('hourString', JSON.stringify(textBox[i]));
+     console.log(textBox.innerText)
  }
 
 }
-
+}
 
 timeDisplay()
 displayTimeBlocks()
