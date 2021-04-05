@@ -23,24 +23,26 @@ const displayTimeBlocks = function() {
         const hourEl = textAreas[i]
         var hourstring = hourEl.getAttribute("data-time")
         console.log(hourstring)
-        hourEl.classList.add("past")
+       
         const hour = parseInt(hourstring)
 
         let textBox = document.getElementsByClassName("textarea");
+        
         textBox.innerText = "";
         
         if (hour > currentTimeHour) {
-            console.log(hour + " is after current time.");
+            let textBox = document.getElementsByClassName("textarea");
+            // console.log(hour + " is after current time.");
             const el = document.getElementById("textarea-" + hour);
-            // textBox.classList.add(".past")
+           
+            textBox[i].classList.add("future")
         } else if (hour < currentTimeHour) {
             const el = document.getElementById("textarea-" + hour);
-            console.log(hour + " is before the current time.");
-            console.log("mark")
-            textBox.classList.add("past");
+            // console.log(hour + " is before the current time.");
+            textBox[i].classList.add("past")
         } else {
-            console.log(hour + " is the current hour.")
-            // textBox.classList.add("past")
+            // console.log(hour + " is the current hour.")
+            textBox[i].classList.add("present")
         }
     }
 }
